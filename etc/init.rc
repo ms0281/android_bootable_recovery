@@ -1,6 +1,9 @@
 import /init.recovery.${ro.hardware}.rc
 
 on early-init
+    # Set symlink to /bootdevice/by-name
+    symlink /dev/block/by-name /dev/block/bootdevice/by-name
+
     # Set the security context of /postinstall if present.
     restorecon /postinstall
 
